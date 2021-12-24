@@ -1,4 +1,4 @@
-package main
+package insert
 
 import (
 	"database/sql"
@@ -7,18 +7,13 @@ import (
 	_ "github.com/go-sql-driver/mysql"
 )
 
-func main() {
-
-	insertDemo()
-}
-
-
 /*
-演示，
+演示 MySQL的inset 增加一条数据
 连接本地localhost:3306下的名为`first`的数据库
 向people中新增一条数据
 */
-func insertDemo()  {
+func Demo()  {
+	fmt.Println("开始执行新增语句")
 	// 1.打开数据库
 	db, err := sql.Open("mysql", "root:root@tcp(localhost:3306)/first")
 	if err != nil {
