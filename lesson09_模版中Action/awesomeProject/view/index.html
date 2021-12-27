@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    取出数据:{{.}}<br/>
+    {{if .}}
+        执行了if<br/>
+    {{else}}
+        就执行了else<br/>
+    {{end}}
+
+    <!--  在模版中初始化变量n  -->
+    {{$n:=567}}
+    {{if lt $n 456}}
+        执行了if<br/>
+    {{else}}
+        执行了else<br>
+    {{end}}
+
+    <!--取出map中的所有value-->
+    {{range .}}
+        {{.}}<br/>
+    {{end}}
+</body>
+</html>

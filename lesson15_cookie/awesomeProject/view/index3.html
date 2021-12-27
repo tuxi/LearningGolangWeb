@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="/static/js/jquery-1.7.2.js"></script>
+    <script type="text/javascript" src="/static/js/jquery.cookie.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("button").click(function () {
+                var value = $.cookie("myKey")
+                alert(value)
+            })
+        })
+    </script>
+</head>
+<body>
+<a href="setCookie">产生cookie</a>
+<button>获取cookie</button>
+</body>
+</html>

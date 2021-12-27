@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax请求，返回json数据</title>
+    <script type="text/javascript" src="/static/js/jquery-1.7.2.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("button").click(function () {
+                // 发起ajax请求
+                $.post("getUser", function (data) {
+                    console.log(data)
+                    var result = "";
+                    for (var i = 0; i < data.length; i++) {
+                        result += "<tr>";
+                        result += "<td>" + data[i].Name + "</td>>";
+                        result += "<td>" + data[i].Age + "</td>";
+                        result += "</tr>";
+                    }
+                    $("#t_tbody").html(result)
+                })
+            })
+        })
+    </script>
+</head>
+<body>
+<button>加载数据到表格</button>
+<table border="1">
+    <tr>
+        <td>姓名</td>
+        <td>年龄</td>
+    </tr>
+    <tbody id="t_tbody">
+
+    </tbody>
+</table>
+</body>
+</html>
